@@ -9,7 +9,7 @@ import { setupCounter } from './counter.ts'
 import './topics/04-homework-types.ts'
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  Hola Vite
+  Hola Vite!
 `
 
 // console.log("Hola mundo");
