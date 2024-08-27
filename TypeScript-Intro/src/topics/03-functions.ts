@@ -1,17 +1,16 @@
 
-
+// Definición de función tradicional. 
+// Cuando una funcion retorna UDEFINED, sgnifica que no está retornando nada
+// cuando retorna VOID, significa qu eno hay un retorno en la función como tal
 function addNumbers( a: number, b:number ) {
-    
     return a+b;
 }
 
-const result: number = addNumbers(1,2)
-
-// console.log({result}); // Imprime una variabe como un objeto
+const result: number = addNumbers(5,2)
 
 // ===========================================
 // Funciones de flecha o Lambda Functions
-
+// Después de los paréntesis definimos el tipo de dato que queremos retornar (string para el ejemplo)
 const addNumbersArrow = (a: number, b: number):string => {
     return `${a+b}`;
 }
@@ -25,6 +24,7 @@ function multiply(firstNumber: number, secondNumber?: number, base: number = 2) 
 
 const multiplyResult: number = multiply(5);
 
+// console.log({result}); // Imprime una variabe como un objeto
 // console.log({result, result2, multiplyResult}); // Imprime una variabe como un objeto
 
 //==================================================
@@ -42,9 +42,9 @@ const healCharacter = ( character: Character, amount: number ) => {
 
 const strider: Character = {
     name: 'Strider',
-    hp: 60,
+    hp: 50,
     showHp(){
-        console.log(`Puntos de vida ${ this.hp }`);
+        console.log(`Puntos de vida: ${ this.hp }`);
     }
 };
 
