@@ -1,5 +1,6 @@
 
-//Si el objeto nunca va a cambiar de valor, lo más recomendable es cambiarla a constante usando const
+//Si el objeto nunca va a cambiar de valor, lo más recomendable es cambiarla a constante
+// usando const
 //la ventaja de usar constantes es que son más ligeras que las variables let
 //porque no tienen métodos de asignación.
 
@@ -11,7 +12,7 @@ nos va a generar error si tratamos de agregar otro tipo de dato, como en el ejem
 let skills : string[] = ['Bash', 'Counter', 'Healing', true, 123];
 
 // Aquí no vamos a poder decirle al objeto, de qué tipo van a ser sur propiedades
-// Porque es un objeto literal de JS
+// Porque es un objeto literal de JS (es decir ya usa :)
 // const strider = {
 //     name: 'Strider',
 //     hp: 100,
@@ -26,11 +27,13 @@ interface Character {
     hometown?: string; // Es Un valor opcional
 }
 
-
+// Debemos definir de qué tipo va a ser nuestra constante (o variable)
+// En este caso lde indicaremos que nuestra constante va a ser de tipo Character
 const strider: Character = {
     name: 'Strider',
     hp: 100,
-    skills: ['Bash', 'Counter']
+    skills: ['Bash', 'Counter'],
+    //hometown: 'Rivendell'
 };
 
 strider.hometown = 'Rivendell';
