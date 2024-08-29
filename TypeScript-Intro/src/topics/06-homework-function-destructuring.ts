@@ -1,7 +1,7 @@
 // Ahora aplicaremos desestructuración al procedimiento anterior
 // 06-function-destructuring.ts
 
-interface Product {
+export interface Product {
     description: string;
     price: number;
 }
@@ -30,7 +30,7 @@ interface TaxCalculationOptions {
 
 // function taxCalculation(options: TaxCalculationOptions): [number, number] {
 // function taxCalculation({tax, products}: TaxCalculationOptions): [number, number] {
-function taxCalculation(options: TaxCalculationOptions): [number, number] {
+export function taxCalculation(options: TaxCalculationOptions): [number, number] {
     const { tax, products } = options;
     let total= 0;
 
@@ -42,15 +42,15 @@ function taxCalculation(options: TaxCalculationOptions): [number, number] {
 }
 
 
-// De acuerdo con EM6, se puede simplificar la sintaxis si una de los agumentos
-// tiene el mismo nombre que en la definición 
-// const result = taxCalculation({tax: tax, products: shoppingCart});
-const [total, taxTotal] = taxCalculation({
-    tax, 
-    products: shoppingCart
-});
+// // De acuerdo con EM6, se puede simplificar la sintaxis si una de los agumentos
+// // tiene el mismo nombre que en la definición 
+// // const result = taxCalculation({tax: tax, products: shoppingCart});
+// const [total, taxTotal] = taxCalculation({
+//     tax, 
+//     products: shoppingCart
+// });
 
-console.log("D_Total: ", total);
-console.log("D_Tax: ", taxTotal);
+// console.log("D_Total: ", total);
+// console.log("D_Tax: ", taxTotal);
 
-export{}
+// export{}
