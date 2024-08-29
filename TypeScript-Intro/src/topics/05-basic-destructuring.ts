@@ -56,4 +56,25 @@ console.log("Author: ", author)
 // console.log("Song: ", song) 
 // console.log("Song: ", anotherSong) 
 
+// ------------------------------------------------
+// Desestructuración de arreglos
+// ------------------------------------------------
+ const dbz: string[] = ['Goku', 'Vegeta', 'Trunks']
+
+// (1) así accedemos a los elementos del arreglo conmunmente
+//  console.log("Personaje 1 ", dbz[1])
+
+// (2) así agregaríamos una execión (undefined) si no hay elementos:
+console.error("Personaje 3 ", dbz[3] )
+console.log("Personaje 3 ", dbz[3] || "No hay personajes 3")
+const trunks = dbz[3] || "No hay personajee";
+console.error(trunks)
+
+// (3) Si lo desestructuramos:
+// const [p1, p2, p3, p4="No hay personaje"]: string[] = ['Goku', 'Vegeta', 'Trunks']
+// (4) Podemos omitir ciertos elementos, separados por comas:
+const [, , p3, p4="No hay personaje"]: string[] = ['Goku', 'Vegeta', 'Trunks']
+console.log("Personaje 4 ", p4)
+
+
 export {}
