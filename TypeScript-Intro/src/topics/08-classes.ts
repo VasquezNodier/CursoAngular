@@ -1,20 +1,29 @@
 
 export class Person {
-	// Las siguientes variables, en general se conocen como propiedades
-	// propiedades de la clase
-	// Es simplemente porque están dentro de una clase
-	public name: string;
-	private address: string;
+	// (1) Podemos evitarnos todo esto haciendo (2)
+	//===========================================================================	
+	// // Las siguientes variables, en general se conocen como propiedades
+	// // propiedades de la clase
+	// // Es simplemente porque están dentro de una clase
+	// public name: string;
+	// private address: string;
+	
+	// //Las funciones dentro de la clase se conocen como métodos
+	
+	// constructor(name : string, address : string) {
+	// 	this.name = name;
+	// 	this.address = address;
+	// }
+	//===========================================================================
 
-	//Las funciones dentro de la clase se conocen como métodos
-
-	constructor() {
-		this.name = 'Nodier';
-		this.address = 'Colombia';
-	}
+	// (2)
+	constructor(
+		public name : string, 
+		private address : string = 'No address'
+	) {}
 }
 
-const ironman = new Person();
+const ironman = new Person('Alexander');
 
 console.log("Persona: ",ironman);
 
