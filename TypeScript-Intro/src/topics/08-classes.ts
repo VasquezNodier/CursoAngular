@@ -23,21 +23,36 @@ export class Person {
 	) {}
 }
 
-export class Hero extends Person {
+// // Herencia
+// export class Hero extends Person {
+
+// 	constructor (
+// 		public alterEgo: string,
+// 		public age: number,
+// 		public realName: string
+// 	) {
+// 		// Debemos llamar el método super() para hacer referencia al
+// 		// constructor de la clase padre
+// 		super(realName, 'Colombie')
+// 	}
+
+// }
+
+// Priorizar composición sobre herencia 
+export class Hero{
 
 	constructor (
 		public alterEgo: string,
 		public age: number,
-		public realName: string
-	) {
-		// Debemos llamar el método super() para hacer referencia al
-		// constructor de la clase padre
-		super(realName, 'Colombie')
-	}
+		public realName: string,
+		public person : Person
+	) {}
 
 }
 
-const ironman = new Hero('Alexander', 45, 'Nodier');
+const person = new Person('Nodier', 'Bucaramanga')
+
+const ironman = new Hero('Alexander', 45, 'Nodier', person);
 
 console.log(ironman);
 
