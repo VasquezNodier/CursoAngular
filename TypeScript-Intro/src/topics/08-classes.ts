@@ -23,9 +23,23 @@ export class Person {
 	) {}
 }
 
-const ironman = new Person('Alexander');
+export class Hero extends Person {
 
-console.log("Persona: ",ironman);
+	constructor (
+		public alterEgo: string,
+		public age: number,
+		public realName: string
+	) {
+		// Debemos llamar el método super() para hacer referencia al
+		// constructor de la clase padre
+		super(realName, 'Colombie')
+	}
+
+}
+
+const ironman = new Hero('Alexander', 45, 'Nodier');
+
+console.log(ironman);
 
 //Aunque TS nos permite acceder al atributo addess aún cuando este es privado
 //Nos muestra un error explícito y en angular le podemos decir que no compile si
