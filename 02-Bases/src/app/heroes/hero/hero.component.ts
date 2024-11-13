@@ -26,5 +26,9 @@ changeAge():void {
   this.age = 24;
 }
 
+resetForm():void {
+  this.name = "Ironman";
+  this.age = 45;
+}
 
 }
