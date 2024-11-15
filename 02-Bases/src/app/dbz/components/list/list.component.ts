@@ -6,7 +6,6 @@ import { Character } from '../../interfaces/character.interface';
     selector: 'dbz-list',
     templateUrl: './list.component.html',
     styleUrl: './list.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ListComponent {
 
