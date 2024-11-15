@@ -20,4 +20,9 @@ export class MainPageComponent {
     console.log("Elementos totales: ",this.characters);
   }
 
+  // Función para recibir el evento del hijo
+  onDeleteCharacter(index: number): void {
+    this.characters.splice(index,1);
+  }
+
 }
