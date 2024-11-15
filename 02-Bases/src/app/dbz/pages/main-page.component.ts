@@ -11,12 +11,13 @@ export class MainPageComponent {
   public characters: Character[] = [
     { name: 'Krillin', power: 1000 },
     { name: 'Goku', power: 9500 },
-    { name: 'Vegeta', power: 7500 },
+    { name: 'Vegeta', power: 600 },
   ];
 
   onNewCharacter(character: Character): void {
-
-    console.log("Main-Page: ",character);
+    console.log('Main Page');
+    this.characters.push(character);
+    console.log("Elementos totales: ",this.characters);
   }
 
 }
