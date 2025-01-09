@@ -16,4 +16,10 @@ export class LazyImageComponent implements OnInit {
   @Input()
   public alt: string = "Image";
 
+  public hasLoaded: boolean = false;
+
+  onLoad(): void {
+    this.hasLoaded = true;
+  }
+
 }
