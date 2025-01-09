@@ -27,13 +27,12 @@ export class GifService {
 
     const params = new HttpParams().
       set('api_key', this.apiKey).
-      set('limit', '20').
+      set('limit', '10').
       set('q', tag);
 
     this.http.get<SearchRespose>(`${this.serviceUrl}search?${params}`)
       .subscribe((res) => {
         this.gifList = res.data;
-        console.log(this.gifList);
       });
   }
 
