@@ -2,7 +2,11 @@
 <hr>
 <div class="row">
   <div class="col">
-    <shared-search-box placeholder="Mi placeholder"></shared-search-box>
+    <shared-search-box
+      (onValue)="searchByCapital($event)"
+      placeholder="Mi placeholder"
+      >
+    </shared-search-box>
   </div>
 </div>
 <hr>
