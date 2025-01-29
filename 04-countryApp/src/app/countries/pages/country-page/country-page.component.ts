@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CountriesService } from '../../services/countries.service';
+import { switchMap } from 'rxjs';
 
 @Component({
   selector: 'country-page',
@@ -11,7 +12,8 @@ export class CountryPageComponent implements OnInit {
 
   constructor (
     private activatedRoute: ActivatedRoute,
-    private countriesService: CountriesService
+    private countriesService: CountriesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -22,13 +24,15 @@ export class CountryPageComponent implements OnInit {
 
     // Así podemos desestructurar el objeto params
     this.activatedRoute.params
-      .subscribe( ({id}) => {
-
-        this.countriesService.searchCountryByCode(id)
-          .subscribe( country => {
-            console.log(country);
-          })
-
+      .pipe(
+        switchMap( ({id}) => this.countriesService.searchCountryByCode(id) )
+      )
+      .subscribe( country  => {
+        if (!country) {
+          this.router.navigateByUrl('/');
+          console.log('Existe el país');
+          return;
+        }
       })
   }
 
